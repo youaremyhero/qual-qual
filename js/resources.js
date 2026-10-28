@@ -29,7 +29,7 @@ window.RESOURCES = {
     "polySingapore": "https://www.nus.edu.sg/oam/admissions/polytechnic-diploma-from-singapore",
     "nusHigh": "https://www.nus.edu.sg/oam/admissions/nus-high-school-diploma",
     "aLevel": "https://www.nus.edu.sg/oam/admissions/singapore-cambridge-gce-a-level",
-    "ibLocal": "https://www.nus.edu.sg/oam/admissions/international-baccalaureate-(ib)-diploma",
+    "ibLocal": "https://www.nus.edu.sg/oam/admissions/ib-diploma",
     "transfer": "https://nus.edu.sg/oam/admissions/transfer-applicants"
   },
 
