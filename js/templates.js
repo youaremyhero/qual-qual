@@ -9,7 +9,7 @@ window.TEMPLATES = {
     { slug: "aLevel",        name: "Singapore-Cambridge GCE A-Level (Local)" },
     { slug: "polySingapore", name: "Polytechnic Diploma from Singapore (Local)" },
     { slug: "nusHigh",       name: "NUS High School Diploma (Local)" },
-    { slug: "ibLocal",       name: "International Baccalaureate (IB) (Local)" },
+    { slug: "ibLocal",       name: "IB Diploma (Local)" },
     { slug: "transfer",      name: "Transfer Applicants (Category)" },
     { slug: "international", name: "International (Pick sub-qualification…)" }
   ],
@@ -26,7 +26,7 @@ window.TEMPLATES = {
     polySingapore: "Application Resources for the Polytechnic Diploma from Singapore Qualification",
     nusHigh:       "Application Resources for the NUS High School Diploma Qualification",
     aLevel:        "Application Resources for the Singapore-Cambridge GCE A-Level Qualification",
-    ibLocal:       "Application Resources for the International Baccalaureate (IB) Qualification",
+    ibLocal:       "Application Resources for the IB Diploma Qualification",
     transfer:      "Application Resources for Transfer Applicants",
     // dynamic builder for international heading
     international(name){ return `Application Resources for the ${name} Qualification`; }
@@ -241,11 +241,11 @@ function buildALevelLocal(periodText, academicYear){
 
 function buildIbLocal(periodText, academicYear){
   const head = wrapperOpen();
-  const card = buildCard(periodText, "the International Baccalaureate (IB) Qualification is", academicYear);
+  const card = buildCard(periodText, "the IB Diploma Qualification is", academicYear);
   const mtlHref = RES.links.ibAdmission; // link MTL note to IB admissions
   const login = loginBlockLocal(true) + mtlNoteWithHref(mtlHref);
   const resItems =
-      li("International Baccalaureate (IB) Diploma Admission Requirements", RES.links.ibAdmission) +
+      li("IB Diploma Admission Requirements", RES.links.ibAdmission) +
       sharedLinksFromKeys(window.TEMPLATES.localResources.ibLocal, RES.links);
   const res = resourcesSection(window.TEMPLATES.headings.ibLocal, resItems);
   return withPdfAddendum(head + card + login + res + wrapperClose());
@@ -265,7 +265,7 @@ function buildTransfer(periodText, academicYear){
 <hr class="section-divider" />
 <h2 style="font-size:18px; font-weight:normal; margin:0 0 10px;">🔎 <strong>Singapore Citizens/ Singapore Permanent Residents / FIN holders</strong></h2>
 <p style="font-size:15px; margin-bottom:24px;">
-As you have indicated that you are currently studying / have enrolled in / have graduated from a tertiary institution,
+As you have indicated that you are currently studying/ have enrolled in / have graduated from a tertiary institution,
 please log in to the <a href="${RES.links.applicantPortal}" target="_blank">Applicant Portal</a> with your
 <a href="${RES.links.singpassIndividuals || RES.links.singpassSupport}" rel="noopener noreferrer" target="_blank">Singpass</a>
 to proceed with your application as a Transfer candidate.</p>
